@@ -1,26 +1,34 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="utf-8" />
-<title>Display a map</title>
-<meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no" />
-<script src="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.js"></script>
-<link href="https://unpkg.com/maplibre-gl@2.4.0/dist/maplibre-gl.css" rel="stylesheet" />
-<style>
-	body { margin: 0; padding: 0; }
-	#map { position: absolute; top: 0; bottom: 0; width: 100%; }
-</style>
+    <meta charset="utf-8">
+    <title>Your Interactive Web Map</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/maplibre-gl@2.2.6/dist/maplibre-gl.js"></script>
+    <link
+        href="https://unpkg.com/maplibre-gl@2.2.6/dist/maplibre-gl.css"
+        rel="stylesheet"
+    />
+    <style>
+        /* Specify the map container's size */
+        #map {
+            height: 100vh;
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
+
 <div id="map"></div>
+
 <script>
-var map = new maplibregl.Map({
-container: 'map', // container id
-style: 'https://demotiles.maplibre.org/style.json', // style URL
-center: [0, 0], // starting position [lng, lat]
-zoom: 1 // starting zoom
-});
+    var map = new maplibregl.Map({
+        container: 'map',
+        style: 'https://yourusername.github.io/your-repo-name/style.json', // Replace with your map style JSON
+        center: [4.899431, 52.379189], // Amsterdam's coordinates
+        zoom: initialZoom // Replace with your initial zoom level
+    });
 </script>
- 
+
 </body>
 </html>
