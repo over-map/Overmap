@@ -1,35 +1,25 @@
 {
-    "version": 8,
-    "name": "Custom Map Style",
-    "sources": {
-      "custom-source": {
-        "type": "vector",
-        "tiles": ["https://yourusername.github.io/your-repo-name/vector-tiles/{z}/{x}/{y}.pbf"],
-        "maxzoom": 14
+  "version": 8,
+  "name": "style",
+  "sources": {
+    "custom-source": {
+      "type": "vector",
+      "tiles": ["https://www.icloud.com/iclouddrive/041D1Nk4kLTWOZhnM4pljVnDw#netherlands-latest.osm.pbf"], // Replace with the actual iCloud-hosted URL
+      "maxzoom": 14
+    }
+  },
+  "layers": [
+    {
+      "id": "background",
+      "type": "background",
+      "paint": {
+        "background-color": "lightgray"
       }
-    },
-    "layers": [
-      {
-        "id": "background",
-        "type": "background",
-        "paint": {
-          "background-color": "lightgray"
-        }
-      },
-      {
-        "id": "custom-layer",
-        "type": "fill",
-        "source": "custom-source",
-        "source-layer": "your-data-layer-name", // Replace with the name of your data layer
-        "paint": {
-          "fill-color": "blue",
-          "fill-opacity": 0.7
-        }
-      }
-    ],
-    "sprite": "",
-    "glyphs": "",
-    "bearing": 0,
-    "center": [4.899431, 52.379189], // Amsterdam's coordinates
-    "zoom": 6 // Set the initial zoom level to 6
-  }
+    }
+  },
+  "sprite": "",
+  "glyphs": "",
+  "bearing": 0,
+  "center": [4.899431, 52.379189], // Amsterdam's coordinates
+  "zoom": 6 // Set the initial zoom level to 6
+}
