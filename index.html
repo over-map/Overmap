@@ -14,7 +14,7 @@
 <body>
     <div id="map"></div>
     <script>
-        fetch('https://github.com/over-map/Overmap/blob/main/style.json')
+        fetch('https://raw.githubusercontent.com/over-map/Overmap/main/style.json')
             .then(response => response.json())
             .then(styleJson => {
                 // Update the source URL in the style
@@ -34,7 +34,7 @@
                 map.addControl(new maplibregl.NavigationControl());
                 map.addControl(new maplibregl.ScaleControl());
 
-                // Add error handling
+                // Error handling
                 map.on('error', (e) => {
                     console.error('Map error:', e);
                 });
