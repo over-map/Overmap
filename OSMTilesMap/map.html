@@ -14,7 +14,7 @@
 <body>
     <div id="map"></div>
     <script>
-        fetch('https://github.com/over-map/Overmap/blob/main/OSMTilesMap/basemap.json')
+        fetch('https://raw.githubusercontent.com/over-map/Overmap/main/OSMTilesMap/basemap.json')
             .then(response => response.json())
             .then(styleJson => {
                 // Update the source URL in the style
