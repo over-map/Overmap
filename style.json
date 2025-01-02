@@ -12,7 +12,7 @@
     },
     "overture": {
       "type": "vector",
-      "url": "https://data.source.coop/cholmes/overture/overture-buildings.pmtiles"
+      "url": "https://overturemaps-tiles-us-west-2-beta.s3.amazonaws.com/2024-08-20/buildings.pmtiles"
     }
   },
   "sprite": "https://tiles.versatiles.org/assets/sprites/sprites",
