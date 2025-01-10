@@ -28,8 +28,8 @@
       "data": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places_simple.geojson"
     }
   },
-  "sprite": "https://demotiles.maplibre.org/style/sprite",
-  "glyphs": "https://demotiles.maplibre.org/font/{fontstack}/{range}.pbf",
+  "glyphs": "https://tiles.versatiles.org/assets/fonts/{fontstack}/{range}.pbf",
+	"sprite": "https://tiles.versatiles.org/assets/sprites/sprites",
   "layers": [
     {
       "id": "background",
