@@ -25,7 +25,7 @@
     },
     "natural-earth": {
       "type": "geojson",
-      "data": "https://d2ad6b4ur7yvpq.cloudfront.net/naturalearth-3.3.0/ne_10m_populated_places.geojson"
+      "data": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places.geojson"
     }
   },
   "sprite": "https://tiles.versatiles.org/assets/sprites/sprites",
@@ -6609,12 +6609,14 @@
           "interpolate",
           ["linear"],
           ["get", "pop_max"],
-          0, 3,
-          100000, 4,
-          1000000, 7,
-          10000000, 10
+          0, 1,
+          100000, 2,
+          1000000, 4,
+          10000000, 8
         ],
-        "circle-color": "#ff7f00",
+        "circle-color": "transparent",
+        "circle-stroke-color": "#ff7f00",
+        "circle-stroke-width": 0.5,
         "circle-opacity": [
           "interpolate",
           ["linear"],
@@ -6630,7 +6632,7 @@
       "source": "natural-earth",
       "layout": {
         "visibility": "visible",
-        "text-field": ["get", "name"],
+        "text-field": ["get", "nameascii"],
         "text-size": [
           "interpolate",
           ["linear"],
@@ -6639,9 +6641,11 @@
           1000000, 12,
           10000000, 14
         ],
-        "text-variable-anchor": ["top", "bottom", "left", "right"],
-        "text-radial-offset": 0.5,
-        "text-justify": "auto"
+        "text-anchor": "top",
+        "text-offset": [0, 1],
+        "text-allow-overlap": false,
+        "text-ignore-placement": false,
+        "text-max-width": 8
       },
       "paint": {
         "text-halo-color": "#ffffff",
