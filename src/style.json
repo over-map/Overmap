@@ -29,6 +29,7 @@
     }
   },
   "sprite": "https://tiles.versatiles.org/assets/sprites/sprites",
+  "glyphs": "https://over-map.github.io/Overmap/public/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
