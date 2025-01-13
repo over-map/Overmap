@@ -26,10 +26,6 @@
     "natural-earth": {
       "type": "geojson",
       "data": "https://over-map.github.io/Overmap/public/geojson/ne_10m_populated_places_simple.geojson"
-    },
-    "protomaps": {
-      "type": "vector",
-      "url": "pmtiles://https://protomaps.com/data/road-network.pmtiles"
     }
   },
   "sprite": "https://tiles.versatiles.org/assets/sprites/sprites",
@@ -2677,57 +2673,6 @@
       "id": "street-motorway:outline",
       "type": "line",
       "source": "versatiles-shortbread",
-      "source-layer": "streets",
-      "filter": [
-        "all",
-        ["!=", "bridge", true],
-        ["!=", "tunnel", true],
-        ["==", "kind", "motorway"],
-        ["any", ["!=", "link", true], ["==", "link", true]]
-      ],
-      "layout": {
-        "line-join": "round",
-        "line-cap": "round",
-        "visibility": "visible"
-      },
-      "paint": {
-        "line-color": "#D6D58E",
-        "line-width": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          6,
-          0.25,
-          7,
-          0.5,
-          8,
-          0.75,
-          9,
-          1,
-          10,
-          1,
-          12,
-          1,
-          14,
-          2,
-          16,
-          4,
-          18,
-          16,
-          20,
-          32,
-          22,
-          64,
-          24,
-          128
-        ],
-        "line-opacity": ["interpolate", ["linear"], ["zoom"], 8, 0, 8.5, 1]
-      }
-    },
-    {
-      "id": "protpmaps-street-motorway:outline",
-      "type": "line",
-      "source": "protomaps",
       "source-layer": "streets",
       "filter": [
         "all",
