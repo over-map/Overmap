@@ -6,7 +6,7 @@
     <title>MapLibre GL JS with Style JSON</title>
     <script src="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
     <link href="https://unpkg.com/maplibre-gl@3.6.2/dist/maplibre-gl.css" rel="stylesheet" />
-    <script src="https://unpkg.com/pmtiles@2.11.0/dist/index.js"></script>
+    <script src="https://unpkg.com/@protomaps/pmtiles@2.11.0/dist/index.js"></script>
     <link rel="icon" href="data:;base64,iVBORw0KGgo=">
     <style>
         body { margin: 0; padding: 0; }
@@ -16,66 +16,65 @@
 <body>
     <div id="map"></div>
     <script>
-        // Create a custom navigation control
-    class CustomNavigationControl {
-        onAdd(map) {
-            this._map = map;
-            this._container = document.createElement('div');
-            this._container.className = 'custom-navigation-control maplibregl-ctrl maplibregl-ctrl-group';
+        // Custom navigation control class
+        class CustomNavigationControl {
+            onAdd(map) {
+                this._map = map;
+                this._container = document.createElement('div');
+                this._container.className = 'custom-navigation-control maplibregl-ctrl maplibregl-ctrl-group';
 
-            // Add Zoom In button
-            const zoomInButton = document.createElement('button');
-            zoomInButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-zoom-in';
-            zoomInButton.type = 'button';
-            zoomInButton.title = 'Zoom In';
-            zoomInButton.innerHTML = '+'; // Add the plus symbol
-            zoomInButton.onclick = () => this._map.zoomTo(this._map.getZoom() + 1); // Custom zoom increment
-            this._container.appendChild(zoomInButton);
+                // Add Zoom In button
+                const zoomInButton = document.createElement('button');
+                zoomInButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-zoom-in';
+                zoomInButton.type = 'button';
+                zoomInButton.title = 'Zoom In';
+                zoomInButton.innerHTML = '+';
+                zoomInButton.onclick = () => this._map.zoomTo(this._map.getZoom() + 1);
+                this._container.appendChild(zoomInButton);
 
-            // Add Zoom Out button
-            const zoomOutButton = document.createElement('button');
-            zoomOutButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-zoom-out';
-            zoomOutButton.type = 'button';
-            zoomOutButton.title = 'Zoom Out';
-            zoomOutButton.innerHTML = '−'; // Add the minus symbol
-            zoomOutButton.onclick = () => this._map.zoomTo(this._map.getZoom() - 1); // Custom zoom decrement
-            this._container.appendChild(zoomOutButton);
+                // Add Zoom Out button
+                const zoomOutButton = document.createElement('button');
+                zoomOutButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-zoom-out';
+                zoomOutButton.type = 'button';
+                zoomOutButton.title = 'Zoom Out';
+                zoomOutButton.innerHTML = '−';
+                zoomOutButton.onclick = () => this._map.zoomTo(this._map.getZoom() - 1);
+                this._container.appendChild(zoomOutButton);
 
-            // Add Compass button
-            const compassButton = document.createElement('button');
-            compassButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-compass';
-            compassButton.type = 'button';
-            compassButton.title = 'Reset Bearing';
-            compassButton.onclick = () => this._map.rotateTo(0); // Reset map rotation
-            compassButton.innerHTML = '⟲'; // Add compass symbol
-            this._container.appendChild(compassButton);
+                // Add Compass button
+                const compassButton = document.createElement('button');
+                compassButton.className = 'maplibregl-ctrl-icon maplibregl-ctrl-compass';
+                compassButton.type = 'button';
+                compassButton.title = 'Reset Bearing';
+                compassButton.innerHTML = '⟲';
+                compassButton.onclick = () => this._map.rotateTo(0);
+                this._container.appendChild(compassButton);
 
-            return this._container;
+                return this._container;
+            }
+
+            onRemove() {
+                this._container.parentNode.removeChild(this._container);
+                this._map = undefined;
+            }
         }
 
-        onRemove() {
-            this._container.parentNode.removeChild(this._container);
-            this._map = undefined;
-        }
-        }
-        
-        // Initialize the PMTiles Protocol
-        let protocol = new pmtiles.Protocol();
+        // Initialize PMTiles protocol for MapLibre
+        const protocol = new pmtiles.Protocol();
         maplibregl.addProtocol("pmtiles", protocol.tile);
 
-        // Create the MapLibre map
+        // Create the MapLibre map instance
         const map = new maplibregl.Map({
-            container: 'map',
+            container: 'map', // Map container element
             style: 'https://over-map.github.io/Overmap/src/style.json',
-            center: [-74.006, 40.7128], // New York City 
-            zoom: 3,
-            glyphs: 'https://tiles.versatiles.org/assets/fonts/{fontstack}/{range}.pbf'
+            center: [-74.006, 40.7128], // New York City coordinates
+            zoom: 3
         });
 
-        // Add custom navigation control with adjusted zoom increments
+        // Add custom navigation control
         map.addControl(new CustomNavigationControl(), 'top-left');
 
-        // Log any errors in tile loading
+        // Log tile loading errors
         map.on('error', (e) => {
             console.error("Map error:", e.error);
         });
