@@ -14,10 +14,6 @@
       "type": "vector",
       "url": "pmtiles://https://overturemaps-tiles-us-west-2-beta.s3.amazonaws.com/2024-12-18/buildings.pmtiles"
     },
-    "overture-roads": {
-      "type": "vector",
-      "url": "pmtiles://https://overturemaps-tiles-us-west-2-beta.s3.amazonaws.com/2024-12-18/transportation.pmtiles"
-    },
     "terrain": {
       "type": "raster-dem",
       "tiles": [
@@ -26,6 +22,10 @@
       "tileSize": 256,
       "maxzoom": 14,
       "encoding": "terrarium"
+    },
+    "natural-earth-roads": {
+      "type": "vector",
+      "url": "https://over-map.github.io/Overmap/public/geojson/ne_10m_roads.mvt"
     },
     "natural-earth-places": {
       "type": "geojson",
@@ -3320,19 +3320,11 @@
       }
     },
     {
-    "id": "primary-overture",
-    "type": "line",
-    "source": "overture-roads",
-    "source-layer": "roads",
-    "minzoom": 6,
-    "maxzoom": 24,
-    "filter": [
-      "match",
-      ["get", "class"],
-      ["primary"],
-      true,
-      false
-    ],
+    "id": "natural-earth-primary",
+      "type": "line",
+      "source": "natural-earth-roads",
+      "source-layer": "roads",
+      "filter": ["==", "type", "Secondary Highway"],
       "layout": {
         "line-join": "round",
         "line-cap": "round",
@@ -3373,19 +3365,11 @@
       }
     },
     {
-      "id": "motorway-overture",
+      "id": "natural-earth-highway",
       "type": "line",
-      "source": "overture-roads",
+      "source": "natural-earth-roads",
       "source-layer": "roads",
-      "minzoom": 6,
-      "maxzoom": 24,
-      "filter": [
-      "match",
-      ["get", "class"],
-      ["motorway"],
-      true,
-      false
-    ],
+      "filter": ["==", "type", "Major Highway"],
       "layout": {
         "line-join": "round",
         "line-cap": "round"
