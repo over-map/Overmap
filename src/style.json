@@ -25,7 +25,7 @@
     },
     "natural-earth-roads": {
       "type": "vector",
-      "url": "https://over-map.github.io/Overmap/public/geojson/{z}/{x}/{y}.mvt"
+      "url": "https://over-map.github.io/Overmap/public/geojson/ne_10m_roads.geojson"
     },
     "natural-earth-places": {
       "type": "geojson",
@@ -3337,7 +3337,7 @@
           ["linear"],
           ["zoom"],
           5,
-          1,
+          0.1,
           7,
           0.25,
           8,
@@ -3369,6 +3369,7 @@
       "type": "line",
       "source": "natural-earth-roads",
       "source-layer": "roads",
+      "filter": ["==", "type", "Major Highway"],
       "layout": {
         "line-join": "round",
         "line-cap": "round"
@@ -3380,7 +3381,7 @@
           ["linear"],
           ["zoom"],
           5,
-          1,
+          0.1,
           7,
           0.25,
           8,
