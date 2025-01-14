@@ -28,7 +28,7 @@
       "data": "https://over-map.github.io/Overmap/public/geojson/ne_50m_populated_places_simple.geojson"
     }
   },
-  "sprite": "https://tiles.versatiles.org/assets/sprites/sprites",
+  "sprite": "https://over-map.github.io/Overmap/public/sprites/sprites",
   "glyphs": "https://over-map.github.io/Overmap/public/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
