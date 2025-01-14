@@ -3325,12 +3325,12 @@
       "id": "major-roads",
       "type": "line",
       "source": "osm-roads",
-      "source-layer": "transportation",
+      "source-layer": "lines",
     "minzoom": 5,
     "maxzoom": 8,
     "filter": [
       "all",
-      ["in", "class", "motorway", "trunk", "primary"]
+      ["in", ["get", "highway"], ["literal", ["motorway", "trunk", "primary"]]]
     ],
     "paint": {
       "line-color": "#ff0000",
