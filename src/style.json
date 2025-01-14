@@ -641,6 +641,7 @@
       "type": "fill-extrusion",
       "source": "overture",
       "source-layer": "building",
+      "minzoom": 14.5,
       "paint": {
           "fill-extrusion-color": "#B2D052",
           "fill-extrusion-height": [
@@ -658,6 +659,7 @@
       "type": "fill-extrusion",
       "source": "overture",
       "source-layer": "building_part",
+      "minzoom": 14.5,
       "paint": {
           "fill-extrusion-color": "#B2D052",
           "fill-extrusion-height": [
