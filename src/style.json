@@ -23,10 +23,10 @@
       "maxzoom": 14,
       "encoding": "terrarium"
     },
-    "mapsme-roads": {
+    "geofabrik-roads": {
       "type": "vector",
-      "tiles": [
-      "https://map.osmz.ru/tiles/{z}/{x}/{y}.pbf"
+    "tiles": [
+      "https://vtiles.geofabrik.de/roads/{z}/{x}/{y}.pbf"
       ],
       "minzoom": 5,
       "maxzoom": 8
@@ -3326,13 +3326,13 @@
     {
       "id": "major-roads",
       "type": "line",
-      "source": "mapsme-roads",
-      "source-layer": "transportation",
+      "source": "geofabrik-roads",
+      "source-layer": "roads",
       "minzoom": 5,
       "maxzoom": 8,
       "filter": [
         "all",
-        ["in", "class", "motorway", "trunk", "primary"]
+        ["in", "type", "motorway", "trunk", "primary"]
       ],
       "paint": {
         "line-color": "#ff0000",
