@@ -3336,8 +3336,8 @@
           "interpolate",
           ["linear"],
           ["zoom"],
-          6,
-          0.1,
+          5,
+          1,
           7,
           0.25,
           8,
@@ -3361,7 +3361,7 @@
           24,
           64
         ],
-        "line-opacity": {"stops": [[6, 0], [6.5, 1]]}
+        "line-opacity": {"stops": [[5, 0], [5.5, 1]]}
       }
     },
     {
@@ -3369,7 +3369,6 @@
       "type": "line",
       "source": "natural-earth-roads",
       "source-layer": "roads",
-      "filter": ["==", "type", "Major Highway"],
       "layout": {
         "line-join": "round",
         "line-cap": "round"
@@ -3380,8 +3379,8 @@
           "interpolate",
           ["linear"],
           ["zoom"],
-          6,
-          0.1,
+          5,
+          1,
           7,
           0.25,
           8,
@@ -3406,7 +3405,7 @@
           64
         ],
         "line-opacity": {
-          "stops": [[6, 0], [6.5, 1]]
+          "stops": [[5, 0], [5.5, 1]]
         }
       }
     },
