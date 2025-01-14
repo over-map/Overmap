@@ -16,7 +16,7 @@
     },
     "overture-roads": {
       "type": "vector",
-      "url": "pmtiles://https://overturemaps-tiles-us-west-2-beta.s3.amazonaws.com/2024-12-18/roads.pmtiles"
+      "url": "pmtiles://https://overturemaps-tiles-us-west-2-beta.s3.amazonaws.com/2024-12-18/transportation.pmtiles"
     },
     "terrain": {
       "type": "raster-dem",
