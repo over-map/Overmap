@@ -23,13 +23,13 @@
       "maxzoom": 14,
       "encoding": "terrarium"
     },
-    "geofabrik-roads": {
+    "roads": {
       "type": "vector",
     "tiles": [
-      "https://vtiles.geofabrik.de/roads/{z}/{x}/{y}.pbf"
-      ],
-      "minzoom": 5,
-      "maxzoom": 8
+      "https://api.protomaps.com/tiles/v2/{z}/{x}/{y}.pbf"
+    ],
+    "minzoom": 5,
+    "maxzoom": 8
     },
     "natural-earth-places": {
       "type": "geojson",
@@ -3326,13 +3326,13 @@
     {
       "id": "major-roads",
       "type": "line",
-      "source": "geofabrik-roads",
+      "source": "roads",
       "source-layer": "roads",
       "minzoom": 5,
       "maxzoom": 8,
       "filter": [
         "all",
-        ["in", "type", "motorway", "trunk", "primary"]
+        ["in", "pmap:kind", "highway", "major_road"]
       ],
       "paint": {
         "line-color": "#ff0000",
