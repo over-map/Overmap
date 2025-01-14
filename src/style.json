@@ -27,9 +27,7 @@
       "type": "vector",
       "tiles": [
         "https://tile.openstreetmap.org/data/v3/{z}/{x}/{y}.pbf"
-      ],
-      "minzoom": 5,
-      "maxzoom": 8
+      ]
     },
     "natural-earth-places": {
       "type": "geojson",
