@@ -23,13 +23,13 @@
       "maxzoom": 14,
       "encoding": "terrarium"
     },
-    "protomaps-roads": {
+    "osm-roads": {
       "type": "vector",
-    "tiles": [
-      "https://api.protomaps.com/tiles/v2/{z}/{x}/{y}.pbf"
-    ],
-    "minzoom": 5,
-    "maxzoom": 8
+      "tiles": [
+        "https://tile.openstreetmap.org/data/v3/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 5,
+      "maxzoom": 8
     },
     "natural-earth-places": {
       "type": "geojson",
@@ -3326,17 +3326,17 @@
     {
       "id": "major-roads",
       "type": "line",
-      "source": "protomaps-roads",
-      "source-layer": "roads",
-      "minzoom": 5,
-      "maxzoom": 8,
-      "filter": [
-        "all",
-        ["in", "pmap:kind", "highway", "major_road"]
-      ],
-      "paint": {
-        "line-color": "#ff0000",
-        "line-width": 1
+      "source": "osm-roads",
+      "source-layer": "transportation",
+    "minzoom": 5,
+    "maxzoom": 8,
+    "filter": [
+      "all",
+      ["in", "class", "motorway", "trunk", "primary"]
+    ],
+    "paint": {
+      "line-color": "#ff0000",
+      "line-width": 1
       }
     },
     {
