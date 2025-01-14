@@ -3325,7 +3325,7 @@
       "id": "major-roads",
       "type": "line",
       "source": "osm-roads",
-      "source-layer": "lines",
+      "source-layer": "streets",
     "minzoom": 5,
     "maxzoom": 8,
     "filter": [
