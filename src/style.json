@@ -25,7 +25,7 @@
     },
     "natural-earth-roads": {
       "type": "vector",
-      "url": "https://over-map.github.io/Overmap/public/geojson/ne_10m_roads.mvt"
+      "url": "https://over-map.github.io/Overmap/public/geojson/{z}/{x}/{y}.mvt"
     },
     "natural-earth-places": {
       "type": "geojson",
