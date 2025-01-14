@@ -23,7 +23,7 @@
       "maxzoom": 14,
       "encoding": "terrarium"
     },
-    "roads": {
+    "protomaps-roads": {
       "type": "vector",
     "tiles": [
       "https://api.protomaps.com/tiles/v2/{z}/{x}/{y}.pbf"
@@ -3326,7 +3326,7 @@
     {
       "id": "major-roads",
       "type": "line",
-      "source": "roads",
+      "source": "protomaps-roads",
       "source-layer": "roads",
       "minzoom": 5,
       "maxzoom": 8,
