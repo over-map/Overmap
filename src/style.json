@@ -23,9 +23,13 @@
       "maxzoom": 14,
       "encoding": "terrarium"
     },
-    "natural-earth-roads": {
+    "mapsme-roads": {
       "type": "vector",
-      "url": "https://over-map.github.io/Overmap/public/geojson/ne_10m_roads.geojson"
+      "tiles": [
+      "https://map.osmz.ru/tiles/{z}/{x}/{y}.pbf"
+      ],
+      "minzoom": 5,
+      "maxzoom": 8
     },
     "natural-earth-places": {
       "type": "geojson",
@@ -3320,94 +3324,19 @@
       }
     },
     {
-    "id": "natural-earth-primary",
+      "id": "major-roads",
       "type": "line",
-      "source": "natural-earth-roads",
-      "source-layer": "roads",
-      "filter": ["==", "type", "Secondary Highway"],
-      "layout": {
-        "line-join": "round",
-        "line-cap": "round",
-        "visibility": "visible"
-      },
+      "source": "mapsme-roads",
+      "source-layer": "transportation",
+      "minzoom": 5,
+      "maxzoom": 8,
+      "filter": [
+        "all",
+        ["in", "class", "motorway", "trunk", "primary"]
+      ],
       "paint": {
-        "line-color": "#D6D58E",
-        "line-width": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          5,
-          0.1,
-          7,
-          0.25,
-          8,
-          0.5,
-          9,
-          0.75,
-          10,
-          0.75,
-          12,
-          0.75,
-          14,
-          1,
-          16,
-          2,
-          18,
-          8,
-          20,
-          16,
-          22,
-          32,
-          24,
-          64
-        ],
-        "line-opacity": {"stops": [[5, 0], [5.5, 1]]}
-      }
-    },
-    {
-      "id": "natural-earth-highway",
-      "type": "line",
-      "source": "natural-earth-roads",
-      "source-layer": "roads",
-      "filter": ["==", "type", "Major Highway"],
-      "layout": {
-        "line-join": "round",
-        "line-cap": "round"
-      },
-      "paint": {
-        "line-color": "#D6D58E",
-        "line-width": [
-          "interpolate",
-          ["linear"],
-          ["zoom"],
-          5,
-          0.1,
-          7,
-          0.25,
-          8,
-          0.5,
-          9,
-          0.75,
-          10,
-          0.75,
-          12,
-          0.75,
-          14,
-          1,
-          16,
-          2,
-          18,
-          8,
-          20,
-          16,
-          22,
-          32,
-          24,
-          64
-        ],
-        "line-opacity": {
-          "stops": [[5, 0], [5.5, 1]]
-        }
+        "line-color": "#ff0000",
+        "line-width": 1
       }
     },
     {
