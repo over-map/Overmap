@@ -3327,12 +3327,12 @@
     "minzoom": 6,
     "maxzoom": 24,
     "filter": [
-        "all",
-        ["!=", "bridge", true],
-        ["!=", "tunnel", true],
-        ["in", "kind", "primary"],
-        ["any", ["!=", "link", true], ["==", "link", true]]
-      ],
+      "match",
+      ["get", "class"],
+      ["primary"],
+      true,
+      false
+    ],
       "layout": {
         "line-join": "round",
         "line-cap": "round",
@@ -3369,23 +3369,23 @@
           24,
           64
         ],
-        "line-opacity": {"stops": [[8, 0], [8.5, 1]]}
+        "line-opacity": {"stops": [[6, 0], [6.5, 1]]}
       }
     },
     {
-      "id": "primary-overture",
+      "id": "motorway-overture",
       "type": "line",
       "source": "overture-roads",
       "source-layer": "roads",
       "minzoom": 6,
       "maxzoom": 24,
       "filter": [
-        "all",
-        ["!=", "bridge", true],
-        ["!=", "tunnel", true],
-        ["==", "kind", "motorway"],
-        ["any", ["!=", "link", true], ["==", "link", true]]
-      ],
+      "match",
+      ["get", "class"],
+      ["motorway"],
+      true,
+      false
+    ],
       "layout": {
         "line-join": "round",
         "line-cap": "round"
@@ -3422,7 +3422,7 @@
           64
         ],
         "line-opacity": {
-          "stops": [[8, 0], [8.5, 1]]
+          "stops": [[6, 0], [6.5, 1]]
         }
       }
     },
