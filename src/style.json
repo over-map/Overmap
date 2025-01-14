@@ -23,12 +23,6 @@
       "maxzoom": 14,
       "encoding": "terrarium"
     },
-    "osm-roads": {
-      "type": "vector",
-      "tiles": [
-        "https://tile.openstreetmap.org/data/v3/{z}/{x}/{y}.pbf"
-      ]
-    },
     "natural-earth-places": {
       "type": "geojson",
       "data": "https://over-map.github.io/Overmap/public/geojson/ne_50m_populated_places_simple.geojson"
@@ -3319,22 +3313,6 @@
         "line-opacity": {
           "stops": [[8, 0], [8.5, 1]]
         }
-      }
-    },
-    {
-      "id": "major-roads",
-      "type": "line",
-      "source": "osm-roads",
-      "source-layer": "streets",
-    "minzoom": 5,
-    "maxzoom": 8,
-    "filter": [
-      "all",
-      ["in", ["get", "highway"], ["literal", ["motorway", "trunk", "primary"]]]
-    ],
-    "paint": {
-      "line-color": "#ff0000",
-      "line-width": 1
       }
     },
     {
