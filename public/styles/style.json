@@ -14,6 +14,11 @@
       "type": "vector",
       "url": "pmtiles://https://overturemaps-tiles-us-west-2-beta.s3.amazonaws.com/2024-12-18/buildings.pmtiles"
     },
+    "natural-earth-urban-areas": {
+      "type": "geojson",
+      "data": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_urban_areas.geojson",
+      "attribution": "Made with Natural Earth"
+    },
     "terrain": {
       "type": "raster-dem",
       "tiles": [
@@ -274,6 +279,24 @@
         "hillshade-shadow-color": "#162D39",    
         "hillshade-highlight-color": "#284340", 
         "hillshade-accent-color": "#3A3F2A"   
+      }
+    },
+    {
+      "id": "urban-areas-fill",
+      "type": "fill",
+      "source": "natural-earth-urban-areas",
+      "paint": {
+        "fill-color": "#324F60",
+        "fill-opacity": 0.5
+      }
+    },
+    {
+      "id": "urban-areas-outline",
+      "type": "line",
+      "source": "natural-earth-urban-areas",
+      "paint": {
+        "line-color": "#324F60",
+        "line-width": 0.5
       }
     },
     {
