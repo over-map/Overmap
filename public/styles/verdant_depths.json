@@ -687,7 +687,7 @@
       "type": "fill",
       "source": "versatiles-shortbread",
       "source-layer": "buildings",
-      "layout": {"visibility": "visible"},
+      "layout": {"visibility": "none"},
       "paint": {
         "fill-color": "#000000",
         "fill-opacity": {"stops": [[14, 0], [15, 0.5]]},
@@ -725,7 +725,7 @@
       "type": "fill",
       "source": "versatiles-shortbread",
       "source-layer": "buildings",
-      "layout": {"visibility": "visible"},
+      "layout": {"visibility": "none"},
       "paint": {
         "fill-color": "#2C5870",
         "fill-opacity": {"stops": [[14, 0], [15, 1]]}
@@ -736,7 +736,7 @@
       "type": "line",
       "source": "versatiles-shortbread",
       "source-layer": "buildings",
-      "layout": {"visibility": "visible"},
+      "layout": {"visibility": "none"},
       "paint": {
         "line-color": "#042940",
         "line-opacity": {"stops": [[14, 0], [15, 0.5]]},
