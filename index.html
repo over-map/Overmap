@@ -141,8 +141,24 @@ const map = new maplibregl.Map({
     container: 'map',
     style: 'https://over-map.github.io/styles_selector/public/styles/autumn_embrace.json',
     center: [-74.006, 40.7128], // New York City
-    zoom: 13,
+    zoom: 15,
     pitch: 45
+});
+
+// Listen for zoom events
+map.on('zoom', () => {
+    const zoom = map.getZoom();
+
+    let targetPitch;
+    if (zoom < 12) {
+        targetPitch = 0;
+    } else {
+        targetPitch = 45;
+    }
+
+    const currentPitch = map.getPitch();
+    const smoothPitch = currentPitch + (targetPitch - currentPitch) * 0.8; // Adjust the 0.1 value for speed
+    map.setPitch(smoothPitch);
 });
 
 // Add controls
