@@ -20,8 +20,8 @@
       "encoding": "terrarium"
     }
   },
-  "sprite": "https://over-map.github.io/urban_comparator/public/sprites/sprites",
-  "glyphs": "https://over-map.github.io/urban_comparator/public/fonts/{fontstack}/{range}.pbf",
+  "sprite": "https://over-map.github.io/styles_selector/public/sprites/sprites",
+  "glyphs": "https://over-map.github.io/styles_selector/public/fonts/{fontstack}/{range}.pbf",
   "layers": [
     {
       "id": "background",
