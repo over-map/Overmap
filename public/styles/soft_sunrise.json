@@ -1480,42 +1480,6 @@
             }
         },
         {
-            "id": "building-overture",
-            "type": "fill-extrusion",
-            "source": "overture-buildings",
-            "source-layer": "building",
-            "minzoom": 14.5,
-            "paint": {
-                "fill-extrusion-color": "#F5C2B7",
-                "fill-extrusion-height": [
-                    "case",
-                    ["==", ["get", "is_underground"], true], 0,
-                    ["==", ["coalesce", ["get", "height"], ["get", "num_floors"]], null], 3,
-                    ["coalesce", ["get", "height"], ["*", ["get", "num_floors"], 3], 3]
-                ],
-                "fill-extrusion-base": ["get", "min_height"],
-                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.9]]}
-            }
-        },
-        {
-            "id": "building-part-overture",
-            "type": "fill-extrusion",
-            "source": "overture-buildings",
-            "source-layer": "building_part",
-            "minzoom": 14.5,
-            "paint": {
-                "fill-extrusion-color": "#F5C2B7",
-                "fill-extrusion-height": [
-                    "case",
-                    ["==", ["get", "is_underground"], true], 0,
-                    ["==", ["coalesce", ["get", "height"], ["get", "num_floors"]], null], 3,
-                    ["coalesce", ["get", "height"], ["*", ["get", "num_floors"], 3], 3]
-                ],
-                "fill-extrusion-base": ["get", "min_height"],
-                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.9]]}
-            }
-        },
-        {
             "id": "tunnel-street-pedestrian-zone",
             "type": "fill",
             "source": "versatiles-shortbread",
@@ -10008,6 +9972,42 @@
                         ]
                     ]
                 }
+            }
+        },
+        {
+            "id": "building-overture",
+            "type": "fill-extrusion",
+            "source": "overture-buildings",
+            "source-layer": "building",
+            "minzoom": 14.5,
+            "paint": {
+                "fill-extrusion-color": "#F5C2B7",
+                "fill-extrusion-height": [
+                    "case",
+                    ["==", ["get", "is_underground"], true], 0,
+                    ["==", ["coalesce", ["get", "height"], ["get", "num_floors"]], null], 3,
+                    ["coalesce", ["get", "height"], ["*", ["get", "num_floors"], 3], 3]
+                ],
+                "fill-extrusion-base": ["get", "min_height"],
+                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.9]]}
+            }
+        },
+        {
+            "id": "building-part-overture",
+            "type": "fill-extrusion",
+            "source": "overture-buildings",
+            "source-layer": "building_part",
+            "minzoom": 14.5,
+            "paint": {
+                "fill-extrusion-color": "#F5C2B7",
+                "fill-extrusion-height": [
+                    "case",
+                    ["==", ["get", "is_underground"], true], 0,
+                    ["==", ["coalesce", ["get", "height"], ["get", "num_floors"]], null], 3,
+                    ["coalesce", ["get", "height"], ["*", ["get", "num_floors"], 3], 3]
+                ],
+                "fill-extrusion-base": ["get", "min_height"],
+                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.9]]}
             }
         },
         {
