@@ -9989,7 +9989,7 @@
                     ["coalesce", ["get", "height"], ["*", ["get", "num_floors"], 3], 3]
                 ],
                 "fill-extrusion-base": ["get", "min_height"],
-                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.9]]}
+                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.8]]}
             }
         },
         {
@@ -10007,7 +10007,7 @@
                     ["coalesce", ["get", "height"], ["*", ["get", "num_floors"], 3], 3]
                 ],
                 "fill-extrusion-base": ["get", "min_height"],
-                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.9]]}
+                "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.8]]}
             }
         },
         {
