@@ -413,7 +413,7 @@
                         ],
                         [
                             8,
-                            0.3
+                            0.1
                         ]
                     ]
                 }
@@ -1496,8 +1496,8 @@
                 "fill-extrusion-base": ["get", "min_height"],
                 "fill-extrusion-opacity": {"stops": [[14, 0], [15, 0.9]]}
             }
-            },
-            {
+        },
+        {
             "id": "building-part-overture",
             "type": "fill-extrusion",
             "source": "overture-buildings",
